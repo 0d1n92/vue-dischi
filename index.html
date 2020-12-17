@@ -10,8 +10,8 @@
   <body>
     <div id="root">
       <header>
-        <select v-model="typeMusic" id="cars">
-          <option   value='typeMusic'>All Genre</option>
+        <select v-model="typeMusic" id="genre_music">
+          <option  value="all">tutti i generi</option>
           <option  v-for="disc in library"  :value="disc.genre">{{disc.genre}}</option>
         </select>
       </header>

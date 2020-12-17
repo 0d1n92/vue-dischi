@@ -10,6 +10,7 @@ new Vue({
   data: {
     library:[],
     typeMusic:"all",
+
 },
   methods: {
     /*compare: function (a,b) {
@@ -28,6 +29,7 @@ new Vue({
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').
     then( (result) => {
         this.library= result.data.response;
+        this.typeMusic="all"
           //this.library.sort(this.compare());
     });
     console.log(this.library);
