@@ -9,29 +9,40 @@ new Vue({
   el: '#root',
   data: {
     library:[],
+    arrayOfgenre:[],
+
     typeMusic:"all",
 
 },
   methods: {
-    /*compare: function (a,b) {
-    const yearA = a.year;
-    const yearB = b.year;
-    let comparison = 0;
-    if (yearA > yearB) {
-      comparison = -1;
-    } else if (yearA < yearB) {
-      comparison = 1;
-    }
-    return comparison;
-  },*/
+  //   compare: function (a,b) {
+  //   const yearA = a.year;
+  //   const yearB = b.year;
+  //   let comparison = 0;
+  //   if (yearA > yearB) {
+  //     comparison = -1;
+  //   } else if (yearA < yearB) {
+  //     comparison = 1;
+  //   }
+  //   return comparison;
+  // },
   },
   mounted:function (){
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').
     then( (result) => {
+        let self= this;
         this.library= result.data.response;
-        this.typeMusic="all"
-          //this.library.sort(this.compare());
+         this.library.forEach((element, index) => {
+          if (!self.arrayOfgenre.includes(element.genre)) {
+            self.arrayOfgenre.push(
+              element.genre,
+            )
+          }
+
+        });
+
+          console.log(self.genere);
     });
-    console.log(this.library);
+
   }
 })
