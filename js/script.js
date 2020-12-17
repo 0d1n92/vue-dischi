@@ -15,6 +15,7 @@ new Vue({
 
 },
   methods: {
+
   //   compare: function (a,b) {
   //   const yearA = a.year;
   //   const yearB = b.year;
@@ -32,6 +33,9 @@ new Vue({
     then( (result) => {
         let self= this;
         this.library= result.data.response;
+        this.library.sort(function(a,b) {
+          return  a.year - b.year;
+        })
          this.library.forEach((element, index) => {
           if (!self.arrayOfgenre.includes(element.genre)) {
             self.arrayOfgenre.push(
