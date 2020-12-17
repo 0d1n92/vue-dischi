@@ -15,6 +15,7 @@ textarea {
   margin: 0; /* 2 */
   border: 0;
 }
+select:focus,
 button:focus,
 input:focus,
 textarea:focus {
@@ -22,20 +23,68 @@ textarea:focus {
   outline: none;
 }
 /* RESET-CLOSE */
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F0EEE9;
+}
+h1 {
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 3px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 0 60px;
+  height: 90px;
+  width: 100%;
+  background-color: #00A0B0;
+}
+
+#genre_music {
+  height: 30px;
+  width: 250px;
+
+}
+#genre_music option {
+    text-align: center;
+}
+
+.float_right {
+  float: right;
+}
 #root {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+
 }
 .box_disc {
   display: flex;
+  margin-top: 90px;
   align-items:center;
+  justify-content: center;
   flex-direction: column;
-  width: 380px;
-  height: 480px;
-  background-color: red;
-  border: 2px solid blue;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #00589B;
+ }
+ .box_disc ul li {
+   list-style: none;
+   text-align: center;
+   font-size: 14px;
+   line-height: 24px;
+ }
+ .title_disc {
+   font-weight: bold;
+ }
+ .author_disc {
+   font-style: italic;
  }
  img.cover {
-   width: 80px;
+   width: 130px;
  }

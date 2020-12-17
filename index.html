@@ -5,12 +5,17 @@
     <title>Vue Dischi</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div id="root">
       <header>
-        <select v-model="typeMusic" id="genre_music">
+        <h1>Fantastic Album</h1>
+        <select  v-model="typeMusic" id="genre_music">
           <option  value="all">tutti i generi</option>
           <option  v-for="type in arrayOfgenre"  :value="type">{{type}}</option>
         </select>
@@ -18,8 +23,8 @@
       <div v-if= "disc.genre==typeMusic || typeMusic=='all'" v-for="disc in library" class="box_disc">
         <img class="cover" :src="disc.poster" alt="">
         <ul>
-          <li>{{disc.title}}</li>
-          <li>{{disc.author}}</li>
+          <li class="title_disc">{{disc.title}}</li>
+          <li class="author_disc">{{disc.author}}</li>
           <li>{{disc.year}}</li>
         </ul>
       </div>
